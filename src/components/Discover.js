@@ -254,6 +254,7 @@ openDrawer() {
                       lisLoading: true
                     });
                     this.props.getDiscover(this.state.selectedItem);
+                    console.log('hello')
                   }}
                 >
                   <Radio
