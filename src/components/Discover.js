@@ -16,6 +16,7 @@ import {
 import ScrollableTabView ,{ScrollableTabBar}from 'react-native-scrollable-tab-view'
 import {Router,Actions,Scene,Stack} from 'react-native-router-flux'
 import Modal from 'react-native-modal'
+import { Dropdown } from "react-native-material-dropdown";
 var {width} = Dimensions.get('window');
 var {height}=Dimensions.get('window');
  import SideBarMenu from './SideBarMenu.js'
@@ -26,6 +27,7 @@ import * as action from '../actions/discoverAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Radio, List, ListItem, Right } from "native-base";
+import { METHOD } from "../constants/const";
 class Discover extends Component{
   constructor() {
           super();
@@ -35,6 +37,11 @@ class Discover extends Component{
                listflip:true,
                selectedItem:'popularity.desc',
                isVisible:false,
+               Visible:false,
+               from: 2018,
+                to: 2018,
+                genres: [],
+                selectedGenre: ""
          }
       }
 
@@ -173,7 +180,7 @@ openDrawer() {
             <Text style={{color:'#f7faff',fontSize:width*0.05,marginLeft:width*0.2,marginTop:height*0.026}}>Discover</Text>
           </View>
           <View>
-            <Icon name='filter' style={{color:'#f7faff', fontSize:23,marginLeft:width*0.2,marginTop:height*0.028}}  onPress={() => {  this.setModalVisible(true) }}/>
+            <Icon name='filter' style={{color:'#f7faff', fontSize:23,marginLeft:width*0.2,marginTop:height*0.028}}  onPress={() => {   this.setState({Visible:!this.state.Visible}); }}/>
 
           </View>
           <View>
@@ -254,7 +261,6 @@ openDrawer() {
                       lisLoading: true
                     });
                     this.props.getDiscover(this.state.selectedItem);
-                    console.log('hello')
                   }}
                 >
                   <Radio
@@ -288,6 +294,95 @@ openDrawer() {
                 CANCEL
               </Text>
             </View>
+          </Modal>
+
+
+          <Modal               //model filter
+            Visible={this.state.Visible}
+            onBackdropPress={() => this.setState({ Visible: false })}
+          >
+               <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          paddingTop: Platform.OS == "ios" ? 20 : 0
+        }}
+      >
+        <View
+          style={{
+            flex: 0.08,
+            alignItems: "center",
+            flexDirection: "row",
+            backgroundColor: "#333435"
+          }}
+        >
+          <View style={{ margin: 10, flex: 0.7 }}>
+            <Text style={{ textAlign: "left", fontSize: 20, color: 'white' }}>
+              Filter
+            </Text>
+          </View>
+          <TouchableOpacity
+            style={{ margin: 10, flex: 0.3 }}
+            onPress={() => {
+              this.props.getallgenres(
+                this.state.from,
+                this.state.to,
+                this.state.selectedGenre,
+              );
+            }}
+          >
+            <Text style={{ textAlign: "right", fontSize: 16, color: 'white' }}>
+              Apply
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 0.92,
+            flexDirection: "column",
+            backgroundColor: 'white'
+          }}
+        >
+          <View style={{ backgroundColor: "#BDC3C7", padding: 10 }}>
+            <Text>Year Range</Text>
+          </View>
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ flex: 0.5 }}>
+              <Dropdown
+                value={this.state.from}
+                data={METHOD.getYears()}
+                onChangeText={selected => {
+                  this.setState({ from: selected });
+                }}
+              />
+            </View>
+            <View style={{ flex: 0.5 }}>
+              <Dropdown
+                value={this.state.to}
+                data={METHOD.getYears()}
+                onChangeText={selected => {
+                  if (this.state.from < this.state.to)
+                    this.setState({ to: selected });
+                  else this.setState({ to: this.state.from });
+                }}
+              />
+            </View>
+          </View>
+          <View style={{ backgroundColor: "#BDC3C7", padding: 10 }}>
+            <Text>Genres</Text>
+          </View>
+          <Dropdown
+            label="ALL"
+            data={this.props.genres}
+            onChangeText={selected =>
+              this.props.genres.forEach(item => {
+                if (item.value == selected)
+                  this.setState({ selectedGenre: item.id });
+              })
+            }
+          />
+        </View>
+      </View>
           </Modal>
 
         <View style={{flex:0.9,flexDirection:'column'}}>

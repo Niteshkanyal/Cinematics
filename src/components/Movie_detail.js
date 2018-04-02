@@ -23,7 +23,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import { MOVIEVIEW, API } from '../constants/const';
 import Image from 'react-native-image-progress'
 import ProgressBar from 'react-native-progress/Circle'
-import Share_social from './Share_social.js'
+import Share_social from './Container/Share_social.js'
 import Share, { ShareSheet, Button } from "react-native-share"
 import Info from './Moviedetail_tabs/Info.js'
 import Cast from './Moviedetail_tabs/Cast.js'

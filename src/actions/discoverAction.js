@@ -13,3 +13,17 @@ export function getDiscover(dot = 'popularity.desc'){
             });
     }
 }
+
+export function getallgenres(sy, ey, gen) {
+    return (dispatch) => {
+        fetch(URL + 'discover/movie?api_key=' + APIKEY + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=' + sy + '&release_date.lte=' + ey + '&with_genres=' + gen)
+            .then((response) => response.json())
+            .then((responseJson) => {
+                dispatch({ type: FILTER.ALLGENRES, payload: responseJson })
+            })
+            .catch((error => {
+                console.log(error);
+            }))
+    }
+}
+

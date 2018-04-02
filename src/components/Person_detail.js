@@ -71,7 +71,7 @@ componentWillReceiveProps = (nextProps) => {
                 onRequestClose={() => {
                    this.setModalVisible(!this.state.modalVisible);
                  }}>
-                 <View   style={styles.modalContent}  blurType='light'>
+                 <View   style={{  marginLeft:width*0.52, flexDirection:'column',height:180,width:210, marginTop:width*-0.89,backgroundColor:'#f7faff',borderColor: "rgba(2, 4, 33, 0.4)",}} >
                     <View style={{flexDirection:'column',borderRadius:20,padding:3}}>
                          <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.02,marginTop:height*0.018}}   onPress={() => Linking.openURL('http://googleplaystore.com')}>Google Play Store</Text>
                           <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.02,marginTop:height*0.028}}   onPress={() => Linking.openURL('http://themoviedb.org')}>View on Tmdb</Text>
@@ -134,19 +134,6 @@ componentWillReceiveProps = (nextProps) => {
   }
 }
 
-const styles = StyleSheet.create({
-
-  modalContent: {
-  marginLeft:width*0.52,
-  flexDirection:'column',
-  height:180,
-  width:210,
-  marginTop:width*-0.89,
-  backgroundColor:'#f7faff',
-  borderColor: "rgba(2, 4, 33, 0.4)",
-},
-
-});
 mapStateToProps = (state, props) => {
     return {
         info: state.personReducer.personinfo,

@@ -23,7 +23,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import { TVVIEW, API } from '../constants/const';
 import Image from 'react-native-image-progress'
 import ProgressBar from 'react-native-progress/Circle'
-import Share_social from './Share_social.js'
+import Share_social from './Container/Share_social.js'
 import Share, { ShareSheet, Button } from "react-native-share"
 import Info from './Tvdetail_tabs/Info.js'
 import Cast from './Tvdetail_tabs/Cast.js'
