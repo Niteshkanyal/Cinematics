@@ -1,16 +1,18 @@
-import { SHARE } from '../constants/const';
+import { combineReducers } from "redux";
 
-let defaultState = { isVisible: false };
-export default (ShareReducer = (state = defaultState, action) => {
-    switch ( action.type ) {
-        case SHARE:
-            return {
-                ...state,
-                isVisible: !state.isVisible
-            }
-        default:
-            return {
-                ...state
-            }
-    }
-});
+import movieviewReducer from "./movieviewReducer";
+import tvviewReducer from "./tvviewReducer";
+import popularpeopleReducer from "./popularpeopleReducer";
+import shareReducer from './shareReducer';
+import discoverReducer from './discoverReducer'
+import personReducer from './personReducer'
+import searchReducer from './searchReducer'
+export default (rootReducer = combineReducers({
+  movieviewReducer,
+  tvviewReducer,
+  popularpeopleReducer,
+  shareReducer,
+  discoverReducer,
+  personReducer,
+  searchReducer,
+}));

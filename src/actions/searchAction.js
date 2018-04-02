@@ -7,7 +7,7 @@ export function search(query) {
             .then(response => response.json())
             .then(responseJson => {
                 data = responseJson.results;
-
+                
                 var change = {
                     movies:this.filterData(data, 'movie'),
                     tv: filterData(data, 'tv'),
