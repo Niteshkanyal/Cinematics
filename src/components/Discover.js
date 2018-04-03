@@ -180,7 +180,7 @@ openDrawer() {
             <Text style={{color:'#f7faff',fontSize:width*0.05,marginLeft:width*0.2,marginTop:height*0.026}}>Discover</Text>
           </View>
           <View>
-            <Icon name='filter' style={{color:'#f7faff', fontSize:23,marginLeft:width*0.2,marginTop:height*0.028}}  onPress={() => {   this.setState({Visible:!this.state.Visible}); }}/>
+            <Icon  style={{color:'#f7faff', fontSize:23,marginLeft:width*0.2,marginTop:height*0.028}}  onPress={() => {   this.setState({Visible:!this.state.Visible}); }}/>
 
           </View>
           <View>

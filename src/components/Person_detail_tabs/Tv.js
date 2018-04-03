@@ -51,7 +51,7 @@ componentWillReceiveProps = (nextProps) => {
       <View style={{flex:1,flexDirection:'column'}}>
       <FlatList
         numColumns={3}
-        data={this.props.data.tv}
+        data={this.props.tv}
         keyExtractor={(x, i) => i}
         renderItem={({item}) =>
         <TouchableOpacity onPress={()=>{ Actions.Tv_detail({ item: item })}}>

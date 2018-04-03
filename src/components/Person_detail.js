@@ -82,7 +82,7 @@ componentWillReceiveProps = (nextProps) => {
                </Modal>
               <Image indicator={ActivityIndicator} source={{ uri: imgPath + this.props.info.profile_path }} style={{ width:width, height:height*0.38,position:'relative'}} />
               <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} onPress={()=>Actions.pop()}/>
-              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.8,position:'absolute'}} onPress={()=>Actions.popTo('Popularpeople')}/>
+              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.8,position:'absolute'}} onPress={()=>Actions.popTo('Moviesview')}/>
               <Icon name='ellipsis-v' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.95,position:'absolute'}}  onPress={() => {  this.setModalVisible(true) }}/>
             </View>
 
