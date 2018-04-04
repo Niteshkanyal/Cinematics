@@ -60,10 +60,10 @@ import * as myActions from "../../actions/moviedetailAction.js";
         }`}
         renderItem={({item}) =>
         <TouchableOpacity onPress={()=>{ Actions.Person_detail({ item: item })}}>
-          <View style={{flex:1,flexDirection:'row',marginTop:height*0.024,height:height*0.132,borderWidth:0.3,borderBottomColor:'gray',borderLeftColor:'white',borderTopColor:'white',borderRightColor:'white',backgroundColor:'white'}}>
+          <View style={styles.container}>
               <View style={{flex:0.03}}></View>
               <View style={{flex:0.3,borderRadius:100,marginTop:width*0.01}}>
-                   <Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: API.IMGPATH + item.profile_path }} style={{ width:80, height:78,borderRadius:100}} />
+                   <Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: API.IMGPATH + item.profile_path }} style={styles.image} />
               </View>
               <View style={{flex:0.02}}></View>
               <View style={{flex:0.3}}>
@@ -76,13 +76,35 @@ import * as myActions from "../../actions/moviedetailAction.js";
               <View style={{flex:0.05}}></View>
           </View>
         </TouchableOpacity>
-
           }
       />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container:
+  {
+    flex:1,
+    flexDirection:'row',
+    marginTop:height*0.024,
+    height:height*0.132,
+    borderWidth:0.3,
+    borderBottomColor:'gray',
+    borderLeftColor:'white',
+    borderTopColor:'white',
+    borderRightColor:'white',
+    backgroundColor:'white',
+  },
+  image:
+  {
+    width:80, 
+    height:78,
+    borderRadius:100,
+  },
+
+});
 
 mapStateToProps = (state, props) => {
     return {

@@ -24,7 +24,7 @@ export default class Menupopup extends Component {
 				}}
 			>
 				<MenuTrigger>
-					<Text style={{ fontSize: 22, zIndex: 100 }}>click jufs jlsd </Text>
+					<Text style={{ fontSize: 22, zIndex: 100 }}>click</Text>
 				</MenuTrigger>
 				<MenuOptions style={{ padding: 10 }}>
 					<MenuOption onSelect={() => alert('Save')} text="Google Play Store" />

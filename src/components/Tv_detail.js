@@ -94,11 +94,15 @@ class Tv_detail extends Component {
                                 <View style={{ flex: 0.05 }}>
                                     <Icon name='circle' style={{ color: '#7f898f', fontSize: 7, marginTop: height * 0.01 }} />
                                 </View>
-                                <View style={{ flex: 0.15 }}><Text style={{ color: '#7f898f' }}>{new Date(this.props.info.first_air_date).getFullYear()}</Text></View>
+                                <View style={{ flex: 0.15 }}>
+                                    <Text style={{ color: '#7f898f' }}>{new Date(this.props.info.first_air_date).getFullYear()}</Text>
+                                </View>
                                 <View style={{ flex: 0.05 }}>
                                     <Icon name='circle' style={{ color: '#7f898f', fontSize: 7, marginTop: height * 0.01 }} />
                                 </View>
-                                <View style={{ flex: 0.6 }}><Text style={{ color: '#7f898f' }}>{this.props.info.episode_run_time[0]} mins</Text></View>
+                                <View style={{ flex: 0.6 }}>
+                                    <Text style={{ color: '#7f898f' }}>{this.props.info.episode_run_time[0]} mins</Text>
+                                </View>
                             </View>
                             <View style={{ flex: 0.35 }}>
                                 <Text style={{ color: 'white', fontSize: width * 0.052, fontWeight: 'bold' }}>{this.props.info.name}</Text>
