@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
-let {height,width}=Dimentions.get('window');
+let { height, width } = Dimensions.get('window');
 
 export default class SideBarMenu extends Component {
     render() {

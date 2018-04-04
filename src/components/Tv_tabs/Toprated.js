@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { View, Text, TouchableOpacity, ActivityIndicator, FlatList, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Dimensions } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-let { height, width } = Dimentions.get('window');
+let { height, width } = Dimensions.get('window');
 import Image from 'react-native-image-progress'
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -36,7 +36,7 @@ class Toprated extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={{ flex: 1, marginTop: height * 0.34 }}>
+        <View style={styles.container}>
           <ActivityIndicator />
         </View>
       )
@@ -54,6 +54,14 @@ class Toprated extends Component {
 
   }
 }
+
+const styles = StyleSheet.create({
+  container:
+    {
+      flex: 1,
+      marginTop: height * 0.34,
+    },
+});
 
 mapStateToProps = (state, props) => {
   return {

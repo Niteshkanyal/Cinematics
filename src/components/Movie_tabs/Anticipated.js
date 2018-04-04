@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { View, ActivityIndicator, Dimensions } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-let { height, width } = Dimentions.get('window');
+let { height, width } = Dimensions.get('window');
 import Image from 'react-native-image-progress'
 import ProgressBar from 'react-native-progress/Bar'
 import { bindActionCreators } from "redux";

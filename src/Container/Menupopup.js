@@ -11,8 +11,7 @@ import {
 	Linking,
 	Text
 } from 'react-native';
-var { width } = Dimensions.get('window');
-var { height } = Dimensions.get('window');
+let {height,width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome';
 export default class Menupopup extends Component {
 	render() {

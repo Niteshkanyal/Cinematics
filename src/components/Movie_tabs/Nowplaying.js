@@ -3,7 +3,7 @@ import { MOVIEVIEW, API } from '../../constants/const';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { View, TextInput, AsyncStorage, Text, TouchableOpacity, ActivityIndicator, FlatList, Dimensions } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-let { height, width } = Dimentions.get('window');
+let { height, width } = Dimensions.get('window');
 import Image from 'react-native-image-progress'
 import ProgressBar from 'react-native-progress/Bar'
 import { bindActionCreators } from "redux";
