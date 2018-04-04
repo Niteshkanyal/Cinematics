@@ -66,9 +66,13 @@ import * as myActions from "../../actions/moviedetailAction.js";
                    <Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: API.IMGPATH + item.profile_path }} style={{ width:80, height:78,borderRadius:100}} />
               </View>
               <View style={{flex:0.02}}></View>
-              <View style={{flex:0.3}}><Text style={{color:'black',fontWeight:'bold',padding:height*0.01}}>{item.name}</Text></View>
+              <View style={{flex:0.3}}>
+                <Text style={{color:'black',fontWeight:'bold',padding:height*0.01}}>{item.name}</Text>
+              </View>
               <View style={{flex:0.05}}></View>
-              <View style={{flex:0.25}}><Text style={{padding:height*0.008,fontStyle:'italic'}}>as {item.character}</Text></View>
+              <View style={{flex:0.25}}>
+                <Text style={{padding:height*0.008,fontStyle:'italic'}}>as {item.character}</Text>
+              </View>
               <View style={{flex:0.05}}></View>
           </View>
         </TouchableOpacity>

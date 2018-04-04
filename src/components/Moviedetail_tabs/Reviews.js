@@ -59,7 +59,6 @@ class Reviews_detail extends Component {
               <Text style={{ fontSize: 15, fontWeight: 'bold', padding: 5 }}>{item.author}</Text>
               <Text style={{ padding: 5 }}>{item.content}</Text>
             </View>
-
           }
         />
       </View>

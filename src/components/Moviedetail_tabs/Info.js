@@ -13,9 +13,7 @@ import {Router,Scene,Stack} from 'react-native-router-flux'
 let {height,width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-
 export default class Info_detail extends Component{
-
   render() {
     return (
       <View style={{flex:1,flexDirection:'column',backgroundColor:'#f7faff'}}>
