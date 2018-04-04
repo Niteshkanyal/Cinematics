@@ -1,36 +1,32 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
-  DrawerLayoutAndroid,
-  TouchableHighlight,
   Dimensions,
   FlatList,
   ActivityIndicator,
   TouchableOpacity,
-  AsyncStorage
 } from 'react-native';
-
-import {MOVIEVIEW,API} from '../../constants/const';
-import {Router,Scene,Stack,Actions} from 'react-native-router-flux'
-
-var {width} = Dimensions.get('window');
-var {height}=Dimensions.get('window');
+import {Actions} from 'react-native-router-flux'
+let {width,height} = Dimensions.get('window');
 import Image from 'react-native-image-progress'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import * as myActions from "../../actions/moviedetailAction.js";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import {API} from '../../constants/const';
+import * as myActions from "../../actions/moviedetailAction.js";
 
  class Cast extends Component{
-  state = {
-     cast_movie:[],
+  constructor(props)
+  {
+    super(props)
+    state = {
       isLoading: true,
-
+    }
   }
+ 
   componentWillReceiveProps = nextProps => {
     if (nextProps.moviecast != this.props.moviecast) {
       this.setState({

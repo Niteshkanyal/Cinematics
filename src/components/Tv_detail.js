@@ -60,7 +60,6 @@ class Tv_detail extends Component {
 
                     <View style={{ flex: 0.6, position: 'relative' }}>
                         <Modal
-
                             backdrop={true}
                             overlayColor={'rgba(255, 255, 255, .25)'}
                             onBackdropPress={() => this.setState({ modalVisible: false })}
@@ -69,21 +68,21 @@ class Tv_detail extends Component {
                             onRequestClose={() => {
                                 this.setModalVisible(!this.state.modalVisible);
                             }}>
-                            <View style={{ marginLeft: width * 0.52, flexDirection: 'column', height: 180, width: 210, marginTop: width * -0.89, backgroundColor: '#f7faff', borderColor: "rgba(2, 4, 33, 0.4)", }} >
+                            <View style={styles.modal_view} >
                                 <View style={{ flexDirection: 'column', borderRadius: 20, padding: 3 }}>
-                                    <Text style={{ color: 'black', fontSize: width * 0.04, marginLeft: width * 0.02, marginTop: height * 0.018 }} onPress={() => Linking.openURL('http://googleplaystore.com')}>Google Play Store</Text>
-                                    <Text style={{ color: 'black', fontSize: width * 0.04, marginLeft: width * 0.02, marginTop: height * 0.028 }} onPress={() => Linking.openURL('http://themoviedb.org')}>View on Tmdb</Text>
-                                    <Text style={{ color: 'black', fontSize: width * 0.04, marginLeft: width * 0.02, marginTop: height * 0.028 }} onPress={() => Linking.openURL('http://imdb.com')}>View on Imdb</Text>
-                                    <Text style={{ color: 'black', fontSize: width * 0.04, marginLeft: width * 0.02, marginTop: height * 0.028 }} onPress={() => Linking.openURL('http://facebook.com')}>Join the Discussion</Text>
+                                    <Text style={styles.text_modal} onPress={() => Linking.openURL('http://googleplaystore.com')}>Google Play Store</Text>
+                                    <Text style={styles.text_modal} onPress={() => Linking.openURL('http://themoviedb.org')}>View on Tmdb</Text>
+                                    <Text style={styles.text_modal} onPress={() => Linking.openURL('http://imdb.com')}>View on Imdb</Text>
+                                    <Text style={styles.text_modal} onPress={() => Linking.openURL('http://facebook.com')}>Join the Discussion</Text>
                                 </View>
                             </View>
                         </Modal>
-                        <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.backdrop_path }} style={{ width: width, height: height * 0.38, position: 'relative' }} />
+                        <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.backdrop_path }} style={styles.image_backdrop} />
 
-                        <Icon name='arrow-left' style={{ color: 'white', fontSize: 24, marginTop: height * 0.01, marginLeft: width * 0.03, position: 'absolute' }} onPress={() => Actions.pop()} />
-                        <Icon name='home' style={{ color: 'white', fontSize: 25, marginTop: height * 0.01, marginLeft: width * 0.7, position: 'absolute' }} onPress={() => Actions.popTo('Tvview')} />
-                        <Icon name='share-alt' style={{ color: 'white', fontSize: 20, marginTop: height * 0.014, marginLeft: width * 0.824, position: 'absolute' }} onPress={() => this.props.toggeleShareButton()} />
-                        <Icon name='ellipsis-v' style={{ color: 'white', fontSize: 25, marginTop: height * 0.014, marginLeft: width * 0.95, position: 'absolute' }} onPress={() => { this.setModalVisible(true) }} />
+                        <Icon name='arrow-left' style={styles.icon_arrow} onPress={() => Actions.pop()} />
+                        <Icon name='home' style={styles.icon_home} onPress={() => Actions.popTo('Tvview')} />
+                        <Icon name='share-alt' style={styles.icon_share} onPress={() => this.props.toggeleShareButton()} />
+                        <Icon name='ellipsis-v' style={styles.icon_3d} onPress={() => { this.setModalVisible(true) }} />
                     </View>
 
 
@@ -120,10 +119,9 @@ class Tv_detail extends Component {
                         </View>
 
                     </View>
-                    <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.poster_path }} style={{ width: width * 0.3, height: height * 0.25, position: 'absolute', marginTop: height * 0.259, marginLeft: width * 0.036 }} />
+                    <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.poster_path }} style={styles.image_poster} />
 
                 </View>
-
 
                 <View style={{ flex: 0.45 }}>
                     <View style={{ flex: 2 }}>
@@ -147,6 +145,79 @@ class Tv_detail extends Component {
         );
     }
 }
+
+
+const styles = StyleSheet.create({
+    container:
+      {
+        flex: 1, 
+        flexDirection: "column", 
+        backgroundColor: "#f7faff",
+      },
+      text_modal:
+      {
+        color: 'black', 
+        fontSize: width * 0.04, 
+        marginLeft: width * 0.02, 
+        marginTop: height * 0.028,
+      },
+      modal_view:
+      {
+        marginLeft: width * 0.52, 
+        flexDirection: 'column', 
+        height: 180, width: 210, 
+        marginTop: width * -0.89, 
+        backgroundColor: '#f7faff', 
+        borderColor: "rgba(2, 4, 33, 0.4)",
+      },
+      image_backdrop:
+      {
+        width: width, 
+        height: height * 0.38, 
+        position: 'relative' ,
+      },
+      image_poster:
+      {
+        width: width * 0.3, 
+        height: height * 0.25, 
+        position: 'absolute', 
+        marginTop: height * 0.259, 
+        marginLeft: width * 0.036 ,
+      },
+      icon_arrow:
+      {
+        color: 'white', 
+        fontSize: 24, 
+        marginTop: height * 0.01, 
+        marginLeft: width * 0.03, 
+        position: 'absolute' ,
+      },
+      icon_home:
+      {
+        color: 'white', 
+        fontSize: 25, 
+        marginTop: height * 0.01, 
+        marginLeft: width * 0.7, 
+        position: 'absolute',
+      },
+      icon_share:
+      {
+        color: 'white', 
+        fontSize: 20, 
+        marginTop: height * 0.014, 
+        marginLeft: width * 0.824, 
+        position: 'absolute' ,
+      },
+      icon_3d:
+      {
+        color: 'white', 
+        fontSize: 25, 
+        marginTop: height * 0.014, 
+        marginLeft: width * 0.95, 
+        position: 'absolute' ,
+      },
+  });
+
 mapStateToProps = (state, props) => {
     return {
         info: state.tvviewReducer.tvdetail,

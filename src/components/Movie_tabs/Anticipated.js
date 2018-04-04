@@ -36,7 +36,6 @@ class Anticipated extends Component {
   };
 
   render() {
-    console.log("phjksfhdksjfsL: ", this.props);
     if (this.state.isLoading) {
       return (
         <View style={{ flex: 1, marginTop: height * 0.34 }}>

@@ -1,21 +1,16 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
-  DrawerLayoutAndroid,
-  TouchableHighlight,
   Dimensions,
   ScrollerView,
   Image,
-  AsyncStorage,ScrollView
+  ScrollView
 } from 'react-native';
 import {Router,Scene,Stack} from 'react-native-router-flux'
-
-var {width} = Dimensions.get('window');
-var {height}=Dimensions.get('window');
+let {height,width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 
