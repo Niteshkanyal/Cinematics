@@ -9,8 +9,8 @@ export default class App extends Component {
     return (
       <MenuProvider>
         <Provider store={store}>
-          <Router/>
-        </Provider> 
+          <Router />
+        </Provider>
       </MenuProvider>
     );
   }

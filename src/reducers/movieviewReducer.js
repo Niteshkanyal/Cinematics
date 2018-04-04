@@ -30,12 +30,12 @@ export default (movieviewReducer = (state = defaultState, action) => {
         ...state,
         movieDetails: action.payload
       };
-      case MOVIEVIEW.MOVIE_CAST:
+    case MOVIEVIEW.MOVIE_CAST:
       return {
         ...state,
         moviecast: action.payload
       };
-      case MOVIEVIEW.MOVIE_REVIEW:
+    case MOVIEVIEW.MOVIE_REVIEW:
       return {
         ...state,
         moviereview: action.payload

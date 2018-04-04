@@ -2,37 +2,28 @@ import React, { Component } from "react";
 import { SOCIAL } from '../constants/const';
 import Share, { ShareSheet, Button } from "react-native-share"
 import {
-    Platform,
     StyleSheet,
     Text,
-    View,
-    DrawerLayoutAndroid,
-    TouchableHighlight,
-    Dimensions, AsyncStorage,
     ActivityIndicator,
-    ScrollView,
     FlatList,
-    TouchableOpacity,
-    Modal,
     Linking
 } from 'react-native';
-import * as action from '../actions/moviedetailAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import * as action from '../actions/moviedetailAction';
 class Share_social extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isVisible:false,
+            isVisible: false,
         }
     }
-    
+
     render() {
-        console.log("myprops: ",this.props.isVisible);
+        console.log("myprops: ", this.props.isVisible);
         return (
             <ShareSheet
-                visible={ this.props.isVisible }
-                // onPress={() => this.props.toggeleShareButton()}
+                visible={this.props.isVisible}
             >
                 <Button
                     iconSrc={{ uri: SOCIAL.TWITTER_ICON }}
@@ -79,7 +70,6 @@ class Share_social extends Component {
                 >
                     Email
               </Button>
-
             </ShareSheet>
         );
     }

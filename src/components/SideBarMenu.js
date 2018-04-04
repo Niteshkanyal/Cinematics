@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
     Platform,
@@ -13,11 +12,9 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
-var { width } = Dimensions.get('window');
-var { height } = Dimensions.get('window');
+let {height,width}=Dimentions.get('window');
 
 export default class SideBarMenu extends Component {
-
     render() {
         return (
             <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -34,7 +31,6 @@ export default class SideBarMenu extends Component {
                 </View>
                 <View style={{ flex: 0.75, flexDirection: 'column' }}>
                     <View style={{ flex: 0.025 }}></View>
-
                     <View style={{ flex: 0.1, flexDirection: "row", marginTop: height * 0.01 }}>
                         <View style={{ flex: 0.05 }}></View>
                         <View style={{ flex: 0.1 }}><Icon name='film' style={{ color: '#00984f', fontSize: 25 }} /></View>
@@ -45,7 +41,6 @@ export default class SideBarMenu extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-
                     <View style={{ flex: 0.1, flexDirection: "row", marginTop: height * 0.01 }}>
                         <View style={{ flex: 0.05 }}></View>
                         <View style={{ flex: 0.1 }}><Icon name='tv' style={{ color: '#00984f', fontSize: 25 }} /></View>

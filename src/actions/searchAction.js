@@ -7,13 +7,11 @@ export function search(query) {
             .then(response => response.json())
             .then(responseJson => {
                 data = responseJson.results;
-                
                 var change = {
-                    movies:this.filterData(data, 'movie'),
+                    movies: this.filterData(data, 'movie'),
                     tv: filterData(data, 'tv'),
                     person: filterData(data, 'person')
                 }
-                
                 dispatch({ type: SEARCH.SEARCH_RESULTS, payload: change });
             })
             .catch(function (error) {
@@ -23,10 +21,10 @@ export function search(query) {
 }
 
 filterData = (dataArry, filter) => {
-    let obj=[];
-     _.filter(dataArry,(item)=>{
-       if(item.media_type==filter)
-        obj.push(item);
-     })
-     return obj;
+    let obj = [];
+    _.filter(dataArry, (item) => {
+        if (item.media_type == filter)
+            obj.push(item);
+    })
+    return obj;
 }

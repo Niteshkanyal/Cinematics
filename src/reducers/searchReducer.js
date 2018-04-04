@@ -1,9 +1,8 @@
-
-import { SEARCH} from '../constants/const'
+import { SEARCH } from '../constants/const'
 
 let defaultState = { data: [] };
 export default (searchReducer = (state = defaultState, action) => {
-    console.log("Action data fdef=", action)
+  console.log("Action data fdef=", action)
   switch (action.type) {
     case SEARCH.SEARCH_RESULTS:
       return {

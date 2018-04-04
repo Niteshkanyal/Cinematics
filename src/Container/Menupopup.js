@@ -7,9 +7,9 @@ import {
 	MenuTrigger
 } from 'react-native-popup-menu';
 import {
-    Dimensions,
-    Linking,
-    Text
+	Dimensions,
+	Linking,
+	Text
 } from 'react-native';
 var { width } = Dimensions.get('window');
 var { height } = Dimensions.get('window');
@@ -25,7 +25,7 @@ export default class Menupopup extends Component {
 				}}
 			>
 				<MenuTrigger>
-					<Text style={{fontSize:22,zIndex:100}}>click jufs jlsd </Text>
+					<Text style={{ fontSize: 22, zIndex: 100 }}>click jufs jlsd </Text>
 				</MenuTrigger>
 				<MenuOptions style={{ padding: 10 }}>
 					<MenuOption onSelect={() => alert('Save')} text="Google Play Store" />
@@ -38,5 +38,5 @@ export default class Menupopup extends Component {
 				</MenuOptions>
 			</Menu>
 		)
-  	}
+	}
 }

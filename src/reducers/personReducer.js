@@ -1,5 +1,5 @@
 
-import { PERSON} from '../constants/const'
+import { PERSON } from '../constants/const'
 
 let defaultState = { data: [] };
 export default (personReducer = (state = defaultState, action) => {
@@ -19,7 +19,6 @@ export default (personReducer = (state = defaultState, action) => {
         ...state,
         persontv: action.payload
       };
- 
     default:
       return { ...state };
   }

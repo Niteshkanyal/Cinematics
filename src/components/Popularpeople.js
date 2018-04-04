@@ -1,35 +1,28 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
   DrawerLayoutAndroid,
-  TouchableHighlight,
   Dimensions,
-  AsyncStorage,
   ActivityIndicator,
-  ScrollView,
   FlatList,
   TouchableOpacity
-
 } from 'react-native';
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view'
-import { Router, Actions, Scene, Stack } from 'react-native-router-flux'
-import { API } from '../constants/const';
-var { width } = Dimensions.get('window');
-var { height } = Dimensions.get('window');
-import SideBarMenu from './SideBarMenu.js'
-import Icon from 'react-native-vector-icons/FontAwesome'
-
-import Image from 'react-native-image-progress'
-import * as myActions from "../actions/popularpeopleAction";
+import { Actions } from 'react-native-router-flux'
 import { bindActionCreators } from "redux";
+import Icon from 'react-native-vector-icons/FontAwesome'
+import Image from 'react-native-image-progress'
 import { connect } from "react-redux";
+import { API } from '../constants/const';
+let { width, height } = Dimensions.get('window');
+import SideBarMenu from './SideBarMenu.js'
+import * as myActions from "../actions/popularpeopleAction";
 
 class Popularpeople extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.openDrawer = this.openDrawer.bind(this);
     this.state = {
       isLoading: true,
@@ -50,7 +43,7 @@ class Popularpeople extends Component {
     this.props.getPopular(this.state.lang, this.state.currentPage);
   };
   render() {
-    console.log("PPULAR PEOPLE",this.props);
+    console.log("PPULAR PEOPLE", this.props);
     if (this.state.isLoading) {
       return (
         <View style={{ flex: 1, marginTop: height * 0.48 }}>
@@ -86,15 +79,14 @@ class Popularpeople extends Component {
                 this.props
                   ? item => item.id.toString()
                   : item => item.id * (0.1).toString()
-              }`}
+                }`}
               renderItem={({ item, index }) =>
-                <TouchableOpacity onPress={()=>{ Actions.Person_detail({ item: item })}}>
+                <TouchableOpacity onPress={() => { Actions.Person_detail({ item: item }) }}>
                   <View style={{ height: height * 0.17, flexDirection: 'row', marginTop: height * 0.02, }}>
                     <Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: API.IMGPATH + item.profile_path }} style={{ width: 100, height: 100, marginLeft: width * 0.036, borderRadius: 100 }} />
                     <Text style={{ marginLeft: width * 0.04, fontSize: 15, fontWeight: 'bold', color: "black", marginTop: height * 0.056 }}>{item.name}</Text>
                   </View>
                 </TouchableOpacity>
-
               }
             />
           </View>
@@ -106,7 +98,7 @@ class Popularpeople extends Component {
 }
 mapStateToProps = (state, props) => {
   return {
-    popular:state.popularpeopleReducer.popularpeople,
+    popular: state.popularpeopleReducer.popularpeople,
   };
 };
 

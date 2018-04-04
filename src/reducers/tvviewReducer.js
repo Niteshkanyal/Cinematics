@@ -1,5 +1,4 @@
-
-import {TVVIEW} from '../constants/const'
+import { TVVIEW } from '../constants/const'
 
 var re_state = {};
 let defaultState = { data: [] };
@@ -10,7 +9,7 @@ export default (tvviewReducer = (state = defaultState, action) => {
         ...state,
         airingtoday: action.payload
       };
-	case TVVIEW.ONTHEAIR:
+    case TVVIEW.ONTHEAIR:
       return {
         ...state,
         ontheair: action.payload
@@ -25,17 +24,17 @@ export default (tvviewReducer = (state = defaultState, action) => {
         ...state,
         toprated: action.payload
       };
-      case TVVIEW.TV_CAST:
+    case TVVIEW.TV_CAST:
       return {
         ...state,
         tvcast: action.payload
       };
-      case TVVIEW.TV_DETAILS:
+    case TVVIEW.TV_DETAILS:
       return {
         ...state,
         tvdetail: action.payload
       };
-      case TVVIEW.TV_SEASONS:
+    case TVVIEW.TV_SEASONS:
       return {
         ...state,
         tvseason: action.payload
