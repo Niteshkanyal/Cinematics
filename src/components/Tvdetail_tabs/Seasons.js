@@ -1,32 +1,30 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
-  DrawerLayoutAndroid,
-  TouchableHighlight,
   Dimensions,
   ActivityIndicator,
   FlatList,
-
 } from 'react-native';
-import {Router,Scene,Stack} from 'react-native-router-flux'
-import {TVVIEW,API} from '../../constants/const';
-var {width} = Dimensions.get('window');
-var {height}=Dimensions.get('window');
+let {height,width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Image from 'react-native-image-progress'
-import * as myActions from "../../actions/tvdetailAction.js";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import * as myActions from "../../actions/tvdetailAction.js";
+import {API} from '../../constants/const';
 
  class Seasons extends Component{
-  state = {
+   constructor(props)
+   {
+    super(props)
+    state = {
       isLoading: true,
+    }
+   }
 
-  }
   componentWillReceiveProps = nextProps => {
     if (nextProps.tvseason != this.props.tvseason) {
       this.setState({

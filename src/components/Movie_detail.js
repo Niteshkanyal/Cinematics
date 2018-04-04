@@ -17,7 +17,7 @@ import Modal from 'react-native-modal'
 let { width, height } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { SOCIAL } from '../constants/const';
-import { MOVIEVIEW, API } from '../constants/const';
+import { API } from '../constants/const';
 import Image from 'react-native-image-progress'
 import Share_social from '../container/Share_social'
 import Info from './Moviedetail_tabs/Info.js'

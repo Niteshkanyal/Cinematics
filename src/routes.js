@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Platform,
-    StyleSheet,
-    Text,
-    View,
-    DrawerLayoutAndroid,
-    TouchableHighlight,
-    Dimensions
-} from 'react-native';
-import { Router, Scene, Stack } from 'react-native-router-flux'
+import { Router, Scene } from 'react-native-router-flux'
 let { width, height } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Moviesview from './components/Moviesview.js'

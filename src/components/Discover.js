@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  DrawerLayoutAndroid,
   Dimensions,
   ActivityIndicator,
   FlatList,

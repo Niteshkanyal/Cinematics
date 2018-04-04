@@ -1,13 +1,14 @@
-import { MOVIEVIEW, API } from '../../constants/const';
+
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Dimensions } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 let { height, width } = Dimensions.get('window');
 import Image from 'react-native-image-progress'
-import ProgressBar from 'react-native-progress/Bar'
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import React, { Component } from "react";
+import { API } from '../../constants/const';
+
 export default class ListStyle extends Component {
     render() {
         return (

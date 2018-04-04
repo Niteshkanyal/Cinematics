@@ -18,7 +18,6 @@ class Search extends Component {
             this.state = {
             }
       }
-
       componentWillReceiveProps = (nextProps) => {
             if (this.props.data != nextProps.data)
                   this.setState({ isLoading: false });

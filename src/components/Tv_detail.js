@@ -13,17 +13,15 @@ import { connect } from 'react-redux';
 import Modal from 'react-native-modal'
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view'
 import { Actions } from 'react-native-router-flux'
-import { SOCIAL } from '../constants/const';
 let { width, height } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Image from 'react-native-image-progress'
-import { TVVIEW, API } from '../constants/const';
+import { API } from '../constants/const';
 import Share_social from '../container/Share_social'
 import Info from './Tvdetail_tabs/Info.js'
 import Cast from './Tvdetail_tabs/Cast.js'
 import Seasons from './Tvdetail_tabs/Seasons.js'
 import * as action from '../actions/tvdetailAction';
-
 
 class Tv_detail extends Component {
     constructor(props) {
@@ -149,74 +147,74 @@ class Tv_detail extends Component {
 
 const styles = StyleSheet.create({
     container:
-      {
-        flex: 1, 
-        flexDirection: "column", 
-        backgroundColor: "#f7faff",
-      },
-      text_modal:
-      {
-        color: 'black', 
-        fontSize: width * 0.04, 
-        marginLeft: width * 0.02, 
-        marginTop: height * 0.028,
-      },
-      modal_view:
-      {
-        marginLeft: width * 0.52, 
-        flexDirection: 'column', 
-        height: 180, width: 210, 
-        marginTop: width * -0.89, 
-        backgroundColor: '#f7faff', 
-        borderColor: "rgba(2, 4, 33, 0.4)",
-      },
-      image_backdrop:
-      {
-        width: width, 
-        height: height * 0.38, 
-        position: 'relative' ,
-      },
-      image_poster:
-      {
-        width: width * 0.3, 
-        height: height * 0.25, 
-        position: 'absolute', 
-        marginTop: height * 0.259, 
-        marginLeft: width * 0.036 ,
-      },
-      icon_arrow:
-      {
-        color: 'white', 
-        fontSize: 24, 
-        marginTop: height * 0.01, 
-        marginLeft: width * 0.03, 
-        position: 'absolute' ,
-      },
-      icon_home:
-      {
-        color: 'white', 
-        fontSize: 25, 
-        marginTop: height * 0.01, 
-        marginLeft: width * 0.7, 
-        position: 'absolute',
-      },
-      icon_share:
-      {
-        color: 'white', 
-        fontSize: 20, 
-        marginTop: height * 0.014, 
-        marginLeft: width * 0.824, 
-        position: 'absolute' ,
-      },
-      icon_3d:
-      {
-        color: 'white', 
-        fontSize: 25, 
-        marginTop: height * 0.014, 
-        marginLeft: width * 0.95, 
-        position: 'absolute' ,
-      },
-  });
+        {
+            flex: 1,
+            flexDirection: "column",
+            backgroundColor: "#f7faff",
+        },
+    text_modal:
+        {
+            color: 'black',
+            fontSize: width * 0.04,
+            marginLeft: width * 0.02,
+            marginTop: height * 0.028,
+        },
+    modal_view:
+        {
+            marginLeft: width * 0.52,
+            flexDirection: 'column',
+            height: 180, width: 210,
+            marginTop: width * -0.89,
+            backgroundColor: '#f7faff',
+            borderColor: "rgba(2, 4, 33, 0.4)",
+        },
+    image_backdrop:
+        {
+            width: width,
+            height: height * 0.38,
+            position: 'relative',
+        },
+    image_poster:
+        {
+            width: width * 0.3,
+            height: height * 0.25,
+            position: 'absolute',
+            marginTop: height * 0.259,
+            marginLeft: width * 0.036,
+        },
+    icon_arrow:
+        {
+            color: 'white',
+            fontSize: 24,
+            marginTop: height * 0.01,
+            marginLeft: width * 0.03,
+            position: 'absolute',
+        },
+    icon_home:
+        {
+            color: 'white',
+            fontSize: 25,
+            marginTop: height * 0.01,
+            marginLeft: width * 0.7,
+            position: 'absolute',
+        },
+    icon_share:
+        {
+            color: 'white',
+            fontSize: 20,
+            marginTop: height * 0.014,
+            marginLeft: width * 0.824,
+            position: 'absolute',
+        },
+    icon_3d:
+        {
+            color: 'white',
+            fontSize: 25,
+            marginTop: height * 0.014,
+            marginLeft: width * 0.95,
+            position: 'absolute',
+        },
+});
 
 mapStateToProps = (state, props) => {
     return {

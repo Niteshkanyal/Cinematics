@@ -23,11 +23,15 @@ import Image from 'react-native-image-progress'
 import * as action from '../actions/personAction.js';
 
 class Person_detail extends Component {
-  state = {
-    isLoading: true,
-    visible: false,
-    modalVisible: false,
+  constructor(props) {
+    super(props)
+    state = {
+      isLoading: true,
+      visible: false,
+      modalVisible: false,
+    }
   }
+
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }

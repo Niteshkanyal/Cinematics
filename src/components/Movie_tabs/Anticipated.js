@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import * as myActions from "../../actions/movieviewAction.js";
 import ListStyle from './ListStyle.js'
 import GridStyle from './GridStyle.js'
-import { MOVIEVIEW, API } from '../../constants/const';
+import { API } from '../../constants/const';
 
 class Anticipated extends Component {
   constructor(props) {
