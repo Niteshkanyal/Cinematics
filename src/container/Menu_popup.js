@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 let {height,width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome';
-export default class Menupopup extends Component {
+export default class Menu_popup extends Component {
 	render() {
 		return (
 			<Menu

@@ -18,7 +18,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import { Radio, List, ListItem, Right } from "native-base";
 import { Dropdown } from "react-native-material-dropdown";
 let { width, height } = Dimensions.get('window');
-import SideBarMenu from './SideBarMenu.js'
+import Sidebar_menu from './Sidebar_menu.js'
 import { API } from '../constants/const'
 import * as action from '../actions/discoverAction';
 import { METHOD } from "../constants/const";
@@ -156,7 +156,7 @@ class Discover extends Component {
         drawerWidth={300}
         ref={(_drawer) => this.drawer = _drawer}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <SideBarMenu />}>
+        renderNavigationView={() => <Sidebar_menu />}>
 
         <View style={{ flex: 1, flexDirection: 'column' }}>
           <View style={{ flex: 0.1, flexDirection: 'row', backgroundColor: '#333333' }}>

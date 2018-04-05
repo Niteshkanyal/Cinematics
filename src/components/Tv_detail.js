@@ -117,7 +117,6 @@ class Tv_detail extends Component {
                                 />
                             </View>
                         </View>
-
                     </View>
                     <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.poster_path }} style={styles.image_poster} />
                 </View>

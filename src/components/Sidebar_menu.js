@@ -14,7 +14,7 @@ import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
 let { height, width } = Dimensions.get('window');
 
-export default class SideBarMenu extends Component {
+export default class Sidebar_menu extends Component {
     render() {
         return (
             <View style={{ flex: 1, flexDirection: 'column' }}>

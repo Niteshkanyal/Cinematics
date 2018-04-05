@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import { Router, Scene } from 'react-native-router-flux'
-let { width, height } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
-import Moviesview from './components/Moviesview.js'
+import Movies_view from './components/Movies_view.js'
 import Tv_detail from './components/Tv_detail.js'
-import SideBarMenu from './components/SideBarMenu.js'
+import Sidebar_menu from './components/Sidebar_menu.js'
 import Tv_view from './components/Tv_view.js'
 import Person_detail from './components/Person_detail.js'
-import Popularpeople from './components/Popularpeople.js'
+import Popular_people from './components/Popular_people.js'
 import Movie_detail from './components/Movie_detail.js'
 import Search from './components/Search.js'
 import Discover from './components/Discover.js'
 
-export default class App extends Component {
+export default class Routes extends Component {
     render() {
         return (
             <Router>
                 <Scene key='root'>
                     <Scene hideNavBar hideTabBar
-                        component={Moviesview}
+                        component={Movies_view}
                         key="Moviesview"
                         initial
                     />
@@ -35,7 +34,7 @@ export default class App extends Component {
                         key="Tv_detail"
                     />
                     <Scene hideNavBar hideTabBar
-                        component={SideBarMenu}
+                        component={Sidebar_menu}
                         key="side"
                     />
                     <Scene hideNavBar hideTabBar
@@ -47,7 +46,7 @@ export default class App extends Component {
                         key="Person_detail"
                     />
                     <Scene hideNavBar hideTabBar
-                        component={Popularpeople}
+                        component={Popular_people}
                         key="Popularpeople"
                     />
                     <Scene hideNavBar hideTabBar

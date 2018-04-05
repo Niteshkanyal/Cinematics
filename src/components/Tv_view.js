@@ -13,7 +13,7 @@ import { Actions } from "react-native-router-flux";
 import ScrollableTabView, { ScrollableTabBar } from "react-native-scrollable-tab-view";
 let { width, height } = Dimensions.get("window");
 import Icon from "react-native-vector-icons/FontAwesome";
-import SideBarMenu from "./SideBarMenu.js";
+import Sidebar_menu from "./Sidebar_menu.js";
 import Airingtoday from "./Tv_tabs/Airingtoday.js";
 import Ontheair from "./Tv_tabs/Ontheair.js";
 import Popular from "./Tv_tabs/Popular.js";
@@ -36,7 +36,7 @@ export default class Tv_view extends Component {
         drawerWidth={300}
         ref={(_drawer) => this.drawer = _drawer}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <SideBarMenu />}>
+        renderNavigationView={() => <Sidebar_menu />}>
         <View style={{ flex: 1, flexDirection: "column", alignItems: "center" }}>
           <View style={{ flex: 0.1, flexDirection: "row", backgroundColor: "#333333" }}>
             <View style={{ flex: 0.06 }}></View>

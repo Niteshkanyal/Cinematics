@@ -13,14 +13,14 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import SideBarMenu from './SideBarMenu.js'
+import Sidebar_menu from './Sidebar_menu.js'
 import * as myActions from "../actions/movieviewAction.js";
 import Nowplaying from './Movie_tabs/Nowplaying.js'
 import Topboxoffice from './Movie_tabs/Topboxoffice.js'
 import Anticipated from './Movie_tabs/Anticipated.js'
 import Toprated from './Movie_tabs/Toprated.js'
 
-export default class Moviesview extends Component {
+export default class Movies_view extends Component {
   constructor(props) {
     super(props);
     this.openDrawer = this.openDrawer.bind(this);
@@ -39,7 +39,7 @@ export default class Moviesview extends Component {
         drawerWidth={300}
         ref={(_drawer) => this.drawer = _drawer}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <SideBarMenu />}>
+        renderNavigationView={() => <Sidebar_menu />}>
         <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
           <View style={{ flex: 0.1, flexDirection: 'row', backgroundColor: '#333333' }}>
             <View style={{ flex: 0.06 }}></View>

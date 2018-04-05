@@ -17,10 +17,10 @@ import Image from 'react-native-image-progress'
 import { connect } from "react-redux";
 import { API } from '../constants/const';
 let { width, height } = Dimensions.get('window');
-import SideBarMenu from './SideBarMenu.js'
+import Sidebar_menu from './Sidebar_menu.js'
 import * as myActions from "../actions/popularpeopleAction";
 
-class Popularpeople extends Component {
+class Popular_people extends Component {
   constructor(props) {
     super(props);
     this.openDrawer = this.openDrawer.bind(this);
@@ -56,8 +56,7 @@ class Popularpeople extends Component {
         drawerWidth={300}
         ref={(_drawer) => this.drawer = _drawer}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <SideBarMenu />}>
-
+        renderNavigationView={() => <Sidebar_menu />}>
         <View style={{ flex: 1, flexDirection: 'column' }}>
           <View style={{ flex: 0.1, flexDirection: 'row', backgroundColor: '#333333' }}>
             <View>
@@ -104,4 +103,4 @@ mapStateToProps = (state, props) => {
 mapDispatchToProps = dispatch => {
   return bindActionCreators(myActions, dispatch);
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Popularpeople);
+export default connect(mapStateToProps, mapDispatchToProps)(Popular_people);

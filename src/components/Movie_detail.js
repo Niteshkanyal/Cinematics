@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
     Text,
     View,
     Dimensions,
@@ -16,7 +15,6 @@ import { connect } from 'react-redux';
 import Modal from 'react-native-modal'
 let { width, height } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { SOCIAL } from '../constants/const';
 import { API } from '../constants/const';
 import Image from 'react-native-image-progress'
 import Share_social from '../container/Share_social'
@@ -56,7 +54,6 @@ class Movie_detail extends Component {
         return (
             <View style={{ flex: 1, flexDirection: 'column' }}>
                 <View style={{ flex: 0.55, flexDirection: 'column', position: 'relative' }}>
-
                     <View style={{ flex: 0.6, position: 'relative' }}>
                         <Modal
                             backdrop={true}
@@ -77,15 +74,12 @@ class Movie_detail extends Component {
                             </View>
                         </Modal>
                         <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.backdrop_path }} style={{ width: width, height: height * 0.38, position: 'relative' }} />
-
                         <Icon name='arrow-left' style={{ color: 'white', fontSize: 24, marginTop: height * 0.01, marginLeft: width * 0.03, position: 'absolute' }} onPress={() => Actions.pop()} />
                         <Icon name='home' style={{ color: 'white', fontSize: 25, marginTop: height * 0.01, marginLeft: width * 0.7, position: 'absolute' }} onPress={() => Actions.popTo('Moviesview')} />
                         <Icon name='share-alt' style={{ color: 'white', fontSize: 20, marginTop: height * 0.014, marginLeft: width * 0.824, position: 'absolute' }} onPress={() => this.props.toggeleShareButton()} />
                         <Icon name='ellipsis-v' style={{ color: 'white', fontSize: 25, marginTop: height * 0.014, marginLeft: width * 0.95, position: 'absolute' }} onPress={() => { this.setModalVisible(true) }} />
                     </View>
-
                     <View style={{ flex: 0.4, backgroundColor: '#303840', flexDirection: 'row', position: 'relative' }}>
-
                         <View style={{ flex: 0.38 }}></View>
                         <View style={{ flex: 0.62, flexDirection: 'column' }}>
                             <View style={{ flex: 0.15 }}></View>
@@ -118,7 +112,6 @@ class Movie_detail extends Component {
                     </View>
                     <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.poster_path }} style={{ width: width * 0.3, height: height * 0.25, position: 'absolute', marginTop: height * 0.259, marginLeft: width * 0.036 }} />
                 </View>
-
                 <View style={{ flex: 0.45 }}>
                     <View style={{ flex: 2 }}>
                         <ScrollableTabView
@@ -150,5 +143,4 @@ mapDispatchToProps = (dispatch) => {
     return bindActionCreators(action, dispatch);
 
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(Movie_detail);
