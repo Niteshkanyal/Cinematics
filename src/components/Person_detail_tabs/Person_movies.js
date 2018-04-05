@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -18,7 +17,7 @@ import { connect } from 'react-redux';
 import * as action from '../../actions/personAction';
 import { API } from "../../constants/const"
 
-class Movies extends Component {
+class Person_movies extends Component {
   constructor(props) {
     super(props)
     state = {
@@ -101,4 +100,4 @@ mapDispatchToProps = (dispatch) => {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Movies);
+export default connect(mapStateToProps, mapDispatchToProps)(Person_movies);

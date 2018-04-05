@@ -1,4 +1,3 @@
-
 import { DISCOVER } from '../constants/const'
 
 let defaultState = { data: [] };

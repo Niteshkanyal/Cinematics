@@ -18,9 +18,9 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import Image from 'react-native-image-progress'
 import { API } from '../constants/const';
 import Share_social from '../container/Share_social'
-import Info from './Tvdetail_tabs/Info.js'
-import Cast from './Tvdetail_tabs/Cast.js'
-import Seasons from './Tvdetail_tabs/Seasons.js'
+import Tv_info from './Tvdetail_tabs/Tv_info.js'
+import Tv_cast from './Tvdetail_tabs/Tv_cast.js'
+import Tv_seasons from './Tvdetail_tabs/Tv_seasons.js'
 import * as action from '../actions/tvdetailAction';
 
 class Tv_detail extends Component {
@@ -83,9 +83,7 @@ class Tv_detail extends Component {
                         <Icon name='ellipsis-v' style={styles.icon_3d} onPress={() => { this.setModalVisible(true) }} />
                     </View>
 
-
                     <View style={{ flex: 0.4, backgroundColor: '#303840', flexDirection: 'row', position: 'relative' }}>
-
                         <View style={{ flex: 0.38 }}></View>
                         <View style={{ flex: 0.62, flexDirection: 'column' }}>
                             <View style={{ flex: 0.15 }}></View>
@@ -122,9 +120,7 @@ class Tv_detail extends Component {
 
                     </View>
                     <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.poster_path }} style={styles.image_poster} />
-
                 </View>
-
                 <View style={{ flex: 0.45 }}>
                     <View style={{ flex: 2 }}>
                         <ScrollableTabView
@@ -134,20 +130,17 @@ class Tv_detail extends Component {
                             tabBarTextStyle={{ fontFamily: 'Roboto', fontSize: width * 0.037 }}
                             tabBarUnderlineStyle={{ backgroundColor: 'white' }}
                             renderTabBar={() => <ScrollableTabBar />}>
-                            <Info tabLabel='INFO' info={this.props.info} />
-                            <Cast tabLabel='CAST' item={this.props.item} />
-                            <Seasons tabLabel='SEASONS' item={this.props.item} />
+                            <Tv_info tabLabel='INFO' info={this.props.info} />
+                            <Tv_cast tabLabel='CAST' item={this.props.item} />
+                            <Tv_seasons tabLabel='SEASONS' item={this.props.item} />
                         </ScrollableTabView>
                         <Share_social />
                     </View>
-
                 </View>
             </View>
-
         );
     }
 }
-
 
 const styles = StyleSheet.create({
     container:

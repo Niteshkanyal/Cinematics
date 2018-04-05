@@ -27,11 +27,9 @@ export default class Tv_view extends Component {
       listflip: false,
     };
   }
-
   openDrawer() {
     this.drawer.openDrawer();
   }
-
   render() {
     return (
       <DrawerLayoutAndroid

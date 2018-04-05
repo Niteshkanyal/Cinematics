@@ -1,4 +1,3 @@
-
 import Icon from "react-native-vector-icons/FontAwesome";
 import { View,StyleSheet, Text, TouchableOpacity, ActivityIndicator, FlatList, Dimensions } from "react-native";
 import { Actions } from "react-native-router-flux";

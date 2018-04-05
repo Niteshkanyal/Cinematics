@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 import * as action from '../../actions/personAction';
 import { API } from "../../constants/const"
 
-class Tv extends Component {
+class Person_tv extends Component {
   constructor(props) {
     super(props)
     state = {
@@ -101,4 +101,4 @@ mapDispatchToProps = (dispatch) => {
   return bindActionCreators(action, dispatch);
 
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Tv);
+export default connect(mapStateToProps, mapDispatchToProps)(Person_tv);

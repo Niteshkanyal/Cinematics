@@ -115,10 +115,7 @@ class Discover extends Component {
               </TouchableOpacity>
             }
           />
-
         </View>
-
-
       )
     } else {
       html_ = (
@@ -151,8 +148,6 @@ class Discover extends Component {
             }
           />
         </View>
-
-
       )
     }
 
@@ -173,7 +168,6 @@ class Discover extends Component {
             </View>
             <View>
               <Icon style={{ color: '#f7faff', fontSize: 23, marginLeft: width * 0.2, marginTop: height * 0.028 }} onPress={() => { this.setState({ Visible: !this.state.Visible }); }} />
-
             </View>
             <View>
               <Icon name='sort' style={{ color: '#f7faff', fontSize: 23, marginLeft: width * 0.065, marginTop: height * 0.028 }} onPress={() => { this.setState({ isVisible: !this.state.isVisible }); }} />
@@ -183,7 +177,6 @@ class Discover extends Component {
             </View>
 
           </View>
-
           <Modal
             isVisible={this.state.isVisible}
             onBackdropPress={() => this.setState({ isVisible: false })}
@@ -292,7 +285,6 @@ class Discover extends Component {
           </View>
         </View>
       </DrawerLayoutAndroid>
-
     );
   }
 }

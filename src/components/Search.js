@@ -26,9 +26,7 @@ class Search extends Component {
       render() {
             return (
                   <View style={{ flex: 1, flexDirection: 'column' }}>
-
                         <View style={{ flexDirection: 'row', backgroundColor: "#333435" }}>
-
                               <View style={{ margin: 10, flex: 0.1 }}>
                                     <TouchableOpacity onPress={() => { Actions.pop() }}  >
                                           <Icon name="arrow-left" size={24} color="#fff" style={{ padding: 5 }} />
@@ -54,9 +52,7 @@ class Search extends Component {
                                                 }} />
                                     </KeyboardAwareScrollView>
                               </View>
-
                         </View>
-
                         <View style={{ flex: 1 }}>
 
                               <ScrollableTabView
@@ -70,13 +66,10 @@ class Search extends Component {
                                     <Actor tabLabel="ACTORS" data={this.props.data} />
                                     <Tv tabLabel="TV SHOWS" data={this.props.data} />
                               </ScrollableTabView>
-
                         </View>
-
                   </View>
             )
       }
-
 }
 mapStateToProps = (state, props) => {
       return {

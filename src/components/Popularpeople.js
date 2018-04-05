@@ -92,7 +92,6 @@ class Popularpeople extends Component {
           </View>
         </View>
       </DrawerLayoutAndroid>
-
     );
   }
 }

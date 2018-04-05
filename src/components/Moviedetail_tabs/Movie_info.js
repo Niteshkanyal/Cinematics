@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -13,7 +12,7 @@ import {Router,Scene,Stack} from 'react-native-router-flux'
 let {height,width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-export default class Info_detail extends Component{
+export default class Movie_info extends Component{
   render() {
     return (
       <View style={{flex:1,flexDirection:'column',backgroundColor:'#f7faff'}}>

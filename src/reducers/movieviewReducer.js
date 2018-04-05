@@ -1,4 +1,3 @@
-
 import { MOVIEVIEW } from '../constants/const'
 
 var re_state = {};

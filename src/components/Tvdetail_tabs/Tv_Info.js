@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   Text,
@@ -12,7 +11,7 @@ import {
 let { height, width } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-export default class Info extends Component {
+export default class Tv_info extends Component {
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#f7faff' }}>
@@ -57,7 +56,6 @@ export default class Info extends Component {
             <View style={{ flex: 0.25, padding: 20, flexDirection: 'column' }}>
               <View>
                 <Text style={{}}><Text style={{ color: 'black', fontWeight: 'bold' }}>First Air Date: </Text>{this.props.info.first_air_date}</Text>
-
                 <Text style={{}}><Text style={{ color: 'black', fontWeight: 'bold' }}>Last Air Date: </Text>{this.props.info.last_air_date}</Text>
               </View>
               <View style={{ flex: 0.2, flexDirection: 'row' }}>

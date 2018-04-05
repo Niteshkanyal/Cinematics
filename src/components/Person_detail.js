@@ -14,12 +14,12 @@ let { width, height } = Dimensions.get('window');
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Modal from 'react-native-modal'
+import Image from 'react-native-image-progress'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { API } from '../constants/const'
-import Info from './Person_detail_tabs/Info.js'
-import Movies from './Person_detail_tabs/Movies.js'
-import Tv from './Person_detail_tabs/Tv.js'
-import Image from 'react-native-image-progress'
+import Person_info from './Person_detail_tabs/Person_info.js'
+import Person_movies from './Person_detail_tabs/Person_movies.js'
+import Person_tv from './Person_detail_tabs/Person_tv.js'
 import * as action from '../actions/personAction.js';
 
 class Person_detail extends Component {
@@ -55,10 +55,8 @@ class Person_detail extends Component {
     return (
       <View style={{ flex: 1, flexDirection: 'column' }}>
         <View style={{ flex: 0.55, flexDirection: 'column', position: 'relative' }}>
-
           <View style={{ flex: 0.6, position: 'relative' }}>
             <Modal
-
               backdrop={true}
               overlayColor={'rgba(255, 255, 255, .25)'}
               onBackdropPress={() => this.setState({ modalVisible: false })}
@@ -81,9 +79,7 @@ class Person_detail extends Component {
             <Icon name='home' style={{ color: 'white', fontSize: 25, marginTop: height * 0.01, marginLeft: width * 0.8, position: 'absolute' }} onPress={() => Actions.popTo('Moviesview')} />
             <Icon name='ellipsis-v' style={{ color: 'white', fontSize: 25, marginTop: height * 0.01, marginLeft: width * 0.95, position: 'absolute' }} onPress={() => { this.setModalVisible(true) }} />
           </View>
-
           <View style={{ flex: 0.4, backgroundColor: '#382030', flexDirection: 'row', position: 'relative' }}>
-
             <View style={{ flex: 0.38 }}></View>
             <View style={{ flex: 0.62, flexDirection: 'column' }}>
               <View style={{ flex: 0.15 }}></View>
@@ -103,10 +99,8 @@ class Person_detail extends Component {
               <View style={{ flex: 0.3, flexDirection: 'row' }}>
               </View>
             </View>
-
           </View>
           <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.profile_path }} style={{ width: width * 0.3, height: height * 0.25, position: 'absolute', marginTop: height * 0.259, marginLeft: width * 0.036 }} />
-
         </View>
         <View style={{ flex: 0.45 }}>
           <View style={{ flex: 2 }}>
@@ -117,15 +111,13 @@ class Person_detail extends Component {
               tabBarTextStyle={{ fontFamily: 'Roboto', fontSize: width * 0.037 }}
               tabBarUnderlineStyle={{ backgroundColor: 'white' }}
               renderTabBar={() => <ScrollableTabBar />}>
-              <Info tabLabel='INFO' info={this.props.info} />
-              <Movies tabLabel='MOVIES' item={this.props.item} />
-              <Tv tabLabel='TV SHOWS' item={this.props.item} />
+              <Person_info tabLabel='INFO' info={this.props.info} />
+              <Person_movies tabLabel='MOVIES' item={this.props.item} />
+              <Person_tv tabLabel='TV SHOWS' item={this.props.item} />
             </ScrollableTabView>
           </View>
-
         </View>
       </View>
-
     );
   }
 }

@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -16,7 +15,7 @@ import { connect } from "react-redux";
 import * as myActions from "../../actions/tvdetailAction.js";
 import { API } from '../../constants/const';
 
-class Seasons extends Component {
+class Tv_seasons extends Component {
   constructor(props) {
     super(props)
     state = {
@@ -35,8 +34,6 @@ class Seasons extends Component {
   componentDidMount = () => {
     this.props.gettvSeason(this.props.item.id);
   };
-
-
   render() {
     console.log(this.props.tvseason)
     if (this.state.isLoading) {
@@ -93,4 +90,4 @@ mapStateToProps = (state, props) => {
 mapDispatchToProps = dispatch => {
   return bindActionCreators(myActions, dispatch);
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Seasons);
+export default connect(mapStateToProps, mapDispatchToProps)(Tv_seasons);

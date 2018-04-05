@@ -1,4 +1,3 @@
-
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Dimensions } from 'react-native'
 import { Actions } from 'react-native-router-flux'
@@ -59,7 +58,6 @@ export default class ListStyle extends Component {
                     }
                 />
             </View>
-
         );
     }
 }

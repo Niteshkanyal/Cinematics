@@ -10,7 +10,7 @@ let { height, width } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Image from 'react-native-image-progress'
 
-export default class Info extends Component {
+export default class Person_info extends Component {
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'row' }}>

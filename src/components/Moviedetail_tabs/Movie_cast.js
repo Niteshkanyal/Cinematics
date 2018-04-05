@@ -18,7 +18,7 @@ import { connect } from "react-redux";
 import {API} from '../../constants/const';
 import * as myActions from "../../actions/moviedetailAction.js";
 
- class Cast extends Component{
+ class Movie_cast extends Component{
   constructor(props)
   {
     super(props)
@@ -115,4 +115,4 @@ mapStateToProps = (state, props) => {
   mapDispatchToProps = dispatch => {
     return bindActionCreators(myActions, dispatch);
   };
-export default connect(mapStateToProps, mapDispatchToProps)(Cast);
+export default connect(mapStateToProps, mapDispatchToProps)(Movie_cast);

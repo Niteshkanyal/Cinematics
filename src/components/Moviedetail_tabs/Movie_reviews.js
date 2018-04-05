@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -14,7 +13,7 @@ import { connect } from "react-redux";
 import * as myActions from "../../actions/moviedetailAction.js";
 let { height, width } = Dimensions.get('window');
 
-class Reviews_detail extends Component {
+class Movie_reviews extends Component {
   constructor(props) {
     super(props)
     state = {
@@ -76,4 +75,4 @@ mapStateToProps = (state, props) => {
 mapDispatchToProps = dispatch => {
   return bindActionCreators(myActions, dispatch);
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Reviews_detail);
+export default connect(mapStateToProps, mapDispatchToProps)(Movie_reviews);

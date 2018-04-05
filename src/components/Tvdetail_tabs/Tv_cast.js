@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -18,7 +17,7 @@ import { connect } from "react-redux";
 import * as myActions from "../../actions/tvdetailAction.js";
 import { API } from '../../constants/const';
 
-class Cast extends Component {
+class Tv_cast extends Component {
   constructor(props) {
     super(props)
     state = {
@@ -111,4 +110,4 @@ mapStateToProps = (state, props) => {
 mapDispatchToProps = dispatch => {
   return bindActionCreators(myActions, dispatch);
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Cast);
+export default connect(mapStateToProps, mapDispatchToProps)(Tv_cast);

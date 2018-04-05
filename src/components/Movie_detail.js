@@ -20,9 +20,9 @@ import { SOCIAL } from '../constants/const';
 import { API } from '../constants/const';
 import Image from 'react-native-image-progress'
 import Share_social from '../container/Share_social'
-import Info from './Moviedetail_tabs/Info.js'
-import Cast from './Moviedetail_tabs/Cast.js'
-import Reviews from './Moviedetail_tabs/Reviews.js'
+import Movie_info from './Moviedetail_tabs/Movie_info.js'
+import Movie_cast from './Moviedetail_tabs/Movie_cast.js'
+import Movie_reviews from './Moviedetail_tabs/Movie_reviews.js'
 import * as action from '../actions/moviedetailAction';
 
 class Movie_detail extends Component {
@@ -59,7 +59,6 @@ class Movie_detail extends Component {
 
                     <View style={{ flex: 0.6, position: 'relative' }}>
                         <Modal
-
                             backdrop={true}
                             overlayColor={'rgba(255, 255, 255, .25)'}
                             onBackdropPress={() => this.setState({ modalVisible: false })}
@@ -84,7 +83,6 @@ class Movie_detail extends Component {
                         <Icon name='share-alt' style={{ color: 'white', fontSize: 20, marginTop: height * 0.014, marginLeft: width * 0.824, position: 'absolute' }} onPress={() => this.props.toggeleShareButton()} />
                         <Icon name='ellipsis-v' style={{ color: 'white', fontSize: 25, marginTop: height * 0.014, marginLeft: width * 0.95, position: 'absolute' }} onPress={() => { this.setModalVisible(true) }} />
                     </View>
-
 
                     <View style={{ flex: 0.4, backgroundColor: '#303840', flexDirection: 'row', position: 'relative' }}>
 
@@ -117,7 +115,6 @@ class Movie_detail extends Component {
                                 />
                             </View>
                         </View>
-
                     </View>
                     <Image indicator={ActivityIndicator} source={{ uri: API.IMGPATH + this.props.info.poster_path }} style={{ width: width * 0.3, height: height * 0.25, position: 'absolute', marginTop: height * 0.259, marginLeft: width * 0.036 }} />
                 </View>
@@ -131,16 +128,14 @@ class Movie_detail extends Component {
                             tabBarTextStyle={{ fontFamily: 'Roboto', fontSize: width * 0.037 }}
                             tabBarUnderlineStyle={{ backgroundColor: 'white' }}
                             renderTabBar={() => <ScrollableTabBar />}>
-                            <Info tabLabel='INFO' info={this.props.info} />
-                            <Cast tabLabel='CAST' item={this.props.item} />
-                            <Reviews tabLabel='REVIEWS' item={this.props.item} />
+                            <Movie_info tabLabel='INFO' info={this.props.info} />
+                            <Movie_cast tabLabel='CAST' item={this.props.item} />
+                            <Movie_reviews tabLabel='REVIEWS' item={this.props.item} />
                         </ScrollableTabView>
                         <Share_social />
                     </View>
-
                 </View>
             </View>
-
         );
     }
 }
